@@ -1,0 +1,17 @@
+E:\Studia\6 semestr\Języki formalne i kompilatory\Test2\AntlrCSharp\bin\Debug\net7.0\AntlrCSharp.exe
+E:\Studia\6 semestr\Języki formalne i kompilatory\Test2\AntlrCSharp\bin\Debug\net7.0\AntlrCSharp.deps.json
+E:\Studia\6 semestr\Języki formalne i kompilatory\Test2\AntlrCSharp\bin\Debug\net7.0\AntlrCSharp.runtimeconfig.json
+E:\Studia\6 semestr\Języki formalne i kompilatory\Test2\AntlrCSharp\bin\Debug\net7.0\AntlrCSharp.dll
+E:\Studia\6 semestr\Języki formalne i kompilatory\Test2\AntlrCSharp\bin\Debug\net7.0\AntlrCSharp.pdb
+E:\Studia\6 semestr\Języki formalne i kompilatory\Test2\AntlrCSharp\bin\Debug\net7.0\Antlr4.Runtime.Standard.dll
+E:\Studia\6 semestr\Języki formalne i kompilatory\Test2\AntlrCSharp\obj\Debug\net7.0\AntlrCSharp.csproj.AssemblyReference.cache
+E:\Studia\6 semestr\Języki formalne i kompilatory\Test2\AntlrCSharp\obj\Debug\net7.0\AntlrCSharp.GeneratedMSBuildEditorConfig.editorconfig
+E:\Studia\6 semestr\Języki formalne i kompilatory\Test2\AntlrCSharp\obj\Debug\net7.0\AntlrCSharp.AssemblyInfoInputs.cache
+E:\Studia\6 semestr\Języki formalne i kompilatory\Test2\AntlrCSharp\obj\Debug\net7.0\AntlrCSharp.AssemblyInfo.cs
+E:\Studia\6 semestr\Języki formalne i kompilatory\Test2\AntlrCSharp\obj\Debug\net7.0\AntlrCSharp.csproj.CoreCompileInputs.cache
+E:\Studia\6 semestr\Języki formalne i kompilatory\Test2\AntlrCSharp\obj\Debug\net7.0\AntlrCSharp.csproj.CopyComplete
+E:\Studia\6 semestr\Języki formalne i kompilatory\Test2\AntlrCSharp\obj\Debug\net7.0\AntlrCSharp.dll
+E:\Studia\6 semestr\Języki formalne i kompilatory\Test2\AntlrCSharp\obj\Debug\net7.0\refint\AntlrCSharp.dll
+E:\Studia\6 semestr\Języki formalne i kompilatory\Test2\AntlrCSharp\obj\Debug\net7.0\AntlrCSharp.pdb
+E:\Studia\6 semestr\Języki formalne i kompilatory\Test2\AntlrCSharp\obj\Debug\net7.0\AntlrCSharp.genruntimeconfig.cache
+E:\Studia\6 semestr\Języki formalne i kompilatory\Test2\AntlrCSharp\obj\Debug\net7.0\ref\AntlrCSharp.dll

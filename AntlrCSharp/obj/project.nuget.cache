@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "XXA0CI5uCtsMraYvOHQhlnu9imkIQgAoK2hptn7xtppPKGJ8jRdLSObhhK4yv5LciL7SjwuuKi+LAaRODqG3WA==",
+  "success": true,
+  "projectFilePath": "E:\\Studia\\6 semestr\\Języki formalne i kompilatory\\Test2\\AntlrCSharp\\AntlrCSharp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\micha\\.nuget\\packages\\antlr4.runtime.standard\\4.13.1\\antlr4.runtime.standard.4.13.1.nupkg.sha512"
+  ],
+  "logs": []
+}

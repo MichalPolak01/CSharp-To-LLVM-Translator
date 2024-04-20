@@ -2,7 +2,7 @@
 using Antlr4.Runtime;
 using AntlrCSharp;
 
-string input = "1-5+2";
+string input = "2-5*5";
 AntlrInputStream inputStream = new AntlrInputStream(input);
 MathLexer lexer = new MathLexer(inputStream);
 CommonTokenStream tokenStream = new CommonTokenStream(lexer);

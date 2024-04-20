@@ -11,7 +11,6 @@ namespace AntlrCSharp
         public override double VisitExpression(MathParser.ExpressionContext context)
         {
             double result = Visit(context.term(0));
-            Console.WriteLine($"Initial result: {result}");
             for (int i = 1; i < context.ChildCount; i += 2)
             {
                 var operatorToken = context.GetChild(i).GetText();
@@ -34,26 +33,22 @@ namespace AntlrCSharp
             return result;
         }
 
-
-
-
-
-
-
         public override double VisitTerm(MathParser.TermContext context)
         {
             double result = Visit(context.factor(0));
             for (int i = 1; i < context.ChildCount; i += 2)
             {
-                var nextFactor = context.factor(i + 1);
-                if (nextFactor != null) // Sprawdzenie czy istnieje więcej termów
+                var operatorToken = context.GetChild(i).GetText();
+                var nextFactor = context.GetChild(i + 1) as MathParser.FactorContext;
+                if (nextFactor != null)
                 {
                     double right = Visit(nextFactor);
-                    if (context.GetChild(i).GetText() == "*")
+                    Console.WriteLine($"Operator: {operatorToken}, Next term: {right}");
+                    if (operatorToken == "*")
                     {
                         result *= right;
                     }
-                    else
+                    else if (operatorToken == "/")
                     {
                         result /= right;
                     }
@@ -61,7 +56,6 @@ namespace AntlrCSharp
             }
             return result;
         }
-
 
 
         public override double VisitFactor(MathParser.FactorContext context)

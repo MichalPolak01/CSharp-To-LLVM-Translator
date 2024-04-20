@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Studia\\6 semestr\\Języki formalne i kompilatory\\Test2\\AntlrCSharp\\AntlrCSharp.csproj": {}
+    "C:\\Users\\dwini\\Desktop\\Test2\\AntlrCSharp\\AntlrCSharp.csproj": {}
   },
   "projects": {
-    "E:\\Studia\\6 semestr\\Języki formalne i kompilatory\\Test2\\AntlrCSharp\\AntlrCSharp.csproj": {
+    "C:\\Users\\dwini\\Desktop\\Test2\\AntlrCSharp\\AntlrCSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Studia\\6 semestr\\Języki formalne i kompilatory\\Test2\\AntlrCSharp\\AntlrCSharp.csproj",
+        "projectUniqueName": "C:\\Users\\dwini\\Desktop\\Test2\\AntlrCSharp\\AntlrCSharp.csproj",
         "projectName": "AntlrCSharp",
-        "projectPath": "E:\\Studia\\6 semestr\\Języki formalne i kompilatory\\Test2\\AntlrCSharp\\AntlrCSharp.csproj",
-        "packagesPath": "C:\\Users\\micha\\.nuget\\packages\\",
-        "outputPath": "E:\\Studia\\6 semestr\\Języki formalne i kompilatory\\Test2\\AntlrCSharp\\obj\\",
+        "projectPath": "C:\\Users\\dwini\\Desktop\\Test2\\AntlrCSharp\\AntlrCSharp.csproj",
+        "packagesPath": "C:\\Users\\dwini\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dwini\\Desktop\\Test2\\AntlrCSharp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\micha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dwini\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -47,6 +48,10 @@
             "Antlr4.Runtime.Standard": {
               "target": "Package",
               "version": "[4.13.1, )"
+            },
+            "LLVMSharp": {
+              "target": "Package",
+              "version": "[16.0.0, )"
             }
           },
           "imports": [
@@ -65,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

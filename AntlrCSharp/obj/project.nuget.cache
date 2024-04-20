@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "XXA0CI5uCtsMraYvOHQhlnu9imkIQgAoK2hptn7xtppPKGJ8jRdLSObhhK4yv5LciL7SjwuuKi+LAaRODqG3WA==",
+  "dgSpecHash": "A/JU7JK0uVVtRiGV61j0JCED8DhN237VKhdCzuwdQ0TjaCkmUMr94xtZ+TMfObiUlFQNaXBKMFBXwguQtkQGig==",
   "success": true,
-  "projectFilePath": "E:\\Studia\\6 semestr\\Języki formalne i kompilatory\\Test2\\AntlrCSharp\\AntlrCSharp.csproj",
+  "projectFilePath": "C:\\Users\\dwini\\Desktop\\Test2\\AntlrCSharp\\AntlrCSharp.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\micha\\.nuget\\packages\\antlr4.runtime.standard\\4.13.1\\antlr4.runtime.standard.4.13.1.nupkg.sha512"
+    "C:\\Users\\dwini\\.nuget\\packages\\antlr4.runtime.standard\\4.13.1\\antlr4.runtime.standard.4.13.1.nupkg.sha512",
+    "C:\\Users\\dwini\\.nuget\\packages\\libllvm\\16.0.6\\libllvm.16.0.6.nupkg.sha512",
+    "C:\\Users\\dwini\\.nuget\\packages\\llvmsharp\\16.0.0\\llvmsharp.16.0.0.nupkg.sha512",
+    "C:\\Users\\dwini\\.nuget\\packages\\llvmsharp.interop\\16.0.0\\llvmsharp.interop.16.0.0.nupkg.sha512"
   ],
   "logs": []
 }

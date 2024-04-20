@@ -36,30 +36,17 @@ using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 [System.CLSCompliant(false)]
 public partial class MathBaseListener : IMathListener {
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="MathParser.start"/>.
+	/// Enter a parse tree produced by <see cref="MathParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterStart([NotNull] MathParser.StartContext context) { }
+	public virtual void EnterExpression([NotNull] MathParser.ExpressionContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="MathParser.start"/>.
+	/// Exit a parse tree produced by <see cref="MathParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitStart([NotNull] MathParser.StartContext context) { }
-
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="MathParser.expr"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterExpr([NotNull] MathParser.ExprContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="MathParser.expr"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitExpr([NotNull] MathParser.ExprContext context) { }
+	public virtual void ExitExpression([NotNull] MathParser.ExpressionContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="MathParser.term"/>.

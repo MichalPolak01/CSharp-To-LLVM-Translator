@@ -1,14 +1,12 @@
 grammar Math;
 
-// Regu³y leksykalne
-INT: [0-9]+;
-WS: [ \t\r\n]+ -> skip;
+// Parser Rules
+expression : term (('+'|'-') term)* ;
 
-// Regu³y gramatyczne
-start: expr EOF;
+term : factor (('*'|'/') factor)* ;
 
-expr: term (('+'|'-') term)*;
+factor : NUMBER | '(' expression ')' ;
 
-term: factor (('*'|'/') factor)*;
-
-factor: INT | '(' expr ')';
+// Lexer Rules
+NUMBER : [0-9]+ ;
+WS : [ \t\r\n]+ -> skip ;

@@ -33,18 +33,11 @@ using IToken = Antlr4.Runtime.IToken;
 [System.CLSCompliant(false)]
 public interface IMathVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="MathParser.start"/>.
+	/// Visit a parse tree produced by <see cref="MathParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitStart([NotNull] MathParser.StartContext context);
-
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="MathParser.expr"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitExpr([NotNull] MathParser.ExprContext context);
+	Result VisitExpression([NotNull] MathParser.ExpressionContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="MathParser.term"/>.

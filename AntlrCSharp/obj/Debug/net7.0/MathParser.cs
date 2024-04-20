@@ -31,18 +31,18 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 [System.CLSCompliant(false)]
 public partial class MathParser : Parser {
 	public const int
-		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, INT=7, WS=8;
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, NUMBER=7, WS=8;
 	public const int
-		RULE_start = 0, RULE_expr = 1, RULE_term = 2, RULE_factor = 3;
+		RULE_expression = 0, RULE_term = 1, RULE_factor = 2;
 	public static readonly string[] ruleNames = {
-		"start", "expr", "term", "factor"
+		"expression", "term", "factor"
 	};
 
 	private static readonly string[] _LiteralNames = {
 		null, "'+'", "'-'", "'*'", "'/'", "'('", "')'"
 	};
 	private static readonly string[] _SymbolicNames = {
-		null, null, null, null, null, null, null, "INT", "WS"
+		null, null, null, null, null, null, null, "NUMBER", "WS"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -94,96 +94,49 @@ public partial class MathParser : Parser {
 	{
 		_interp = new ParserATNSimulator(this,_ATN);
 	}
-	public partial class StartContext : ParserRuleContext {
-		public ExprContext expr() {
-			return GetRuleContext<ExprContext>(0);
-		}
-		public ITerminalNode Eof() { return GetToken(MathParser.Eof, 0); }
-		public StartContext(ParserRuleContext parent, int invokingState)
-			: base(parent, invokingState)
-		{
-		}
-		public override int RuleIndex { get { return RULE_start; } }
-		public override void EnterRule(IParseTreeListener listener) {
-			IMathListener typedListener = listener as IMathListener;
-			if (typedListener != null) typedListener.EnterStart(this);
-		}
-		public override void ExitRule(IParseTreeListener listener) {
-			IMathListener typedListener = listener as IMathListener;
-			if (typedListener != null) typedListener.ExitStart(this);
-		}
-		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IMathVisitor<TResult> typedVisitor = visitor as IMathVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitStart(this);
-			else return visitor.VisitChildren(this);
-		}
-	}
-
-	[RuleVersion(0)]
-	public StartContext start() {
-		StartContext _localctx = new StartContext(_ctx, State);
-		EnterRule(_localctx, 0, RULE_start);
-		try {
-			EnterOuterAlt(_localctx, 1);
-			{
-			State = 8; expr();
-			State = 9; Match(Eof);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.ReportError(this, re);
-			_errHandler.Recover(this, re);
-		}
-		finally {
-			ExitRule();
-		}
-		return _localctx;
-	}
-
-	public partial class ExprContext : ParserRuleContext {
+	public partial class ExpressionContext : ParserRuleContext {
 		public TermContext[] term() {
 			return GetRuleContexts<TermContext>();
 		}
 		public TermContext term(int i) {
 			return GetRuleContext<TermContext>(i);
 		}
-		public ExprContext(ParserRuleContext parent, int invokingState)
+		public ExpressionContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_expr; } }
+		public override int RuleIndex { get { return RULE_expression; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IMathListener typedListener = listener as IMathListener;
-			if (typedListener != null) typedListener.EnterExpr(this);
+			if (typedListener != null) typedListener.EnterExpression(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IMathListener typedListener = listener as IMathListener;
-			if (typedListener != null) typedListener.ExitExpr(this);
+			if (typedListener != null) typedListener.ExitExpression(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMathVisitor<TResult> typedVisitor = visitor as IMathVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitExpr(this);
+			if (typedVisitor != null) return typedVisitor.VisitExpression(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public ExprContext expr() {
-		ExprContext _localctx = new ExprContext(_ctx, State);
-		EnterRule(_localctx, 2, RULE_expr);
+	public ExpressionContext expression() {
+		ExpressionContext _localctx = new ExpressionContext(_ctx, State);
+		EnterRule(_localctx, 0, RULE_expression);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 11; term();
-			State = 16;
+			State = 6; term();
+			State = 11;
 			_errHandler.Sync(this);
 			_la = _input.La(1);
 			while (_la==T__0 || _la==T__1) {
 				{
 				{
-				State = 12;
+				State = 7;
 				_la = _input.La(1);
 				if ( !(_la==T__0 || _la==T__1) ) {
 				_errHandler.RecoverInline(this);
@@ -195,10 +148,10 @@ public partial class MathParser : Parser {
 					_errHandler.ReportMatch(this);
 					Consume();
 				}
-				State = 13; term();
+				State = 8; term();
 				}
 				}
-				State = 18;
+				State = 13;
 				_errHandler.Sync(this);
 				_la = _input.La(1);
 			}
@@ -245,19 +198,19 @@ public partial class MathParser : Parser {
 	[RuleVersion(0)]
 	public TermContext term() {
 		TermContext _localctx = new TermContext(_ctx, State);
-		EnterRule(_localctx, 4, RULE_term);
+		EnterRule(_localctx, 2, RULE_term);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 19; factor();
-			State = 24;
+			State = 14; factor();
+			State = 19;
 			_errHandler.Sync(this);
 			_la = _input.La(1);
 			while (_la==T__2 || _la==T__3) {
 				{
 				{
-				State = 20;
+				State = 15;
 				_la = _input.La(1);
 				if ( !(_la==T__2 || _la==T__3) ) {
 				_errHandler.RecoverInline(this);
@@ -269,10 +222,10 @@ public partial class MathParser : Parser {
 					_errHandler.ReportMatch(this);
 					Consume();
 				}
-				State = 21; factor();
+				State = 16; factor();
 				}
 				}
-				State = 26;
+				State = 21;
 				_errHandler.Sync(this);
 				_la = _input.La(1);
 			}
@@ -290,9 +243,9 @@ public partial class MathParser : Parser {
 	}
 
 	public partial class FactorContext : ParserRuleContext {
-		public ITerminalNode INT() { return GetToken(MathParser.INT, 0); }
-		public ExprContext expr() {
-			return GetRuleContext<ExprContext>(0);
+		public ITerminalNode NUMBER() { return GetToken(MathParser.NUMBER, 0); }
+		public ExpressionContext expression() {
+			return GetRuleContext<ExpressionContext>(0);
 		}
 		public FactorContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -317,23 +270,23 @@ public partial class MathParser : Parser {
 	[RuleVersion(0)]
 	public FactorContext factor() {
 		FactorContext _localctx = new FactorContext(_ctx, State);
-		EnterRule(_localctx, 6, RULE_factor);
+		EnterRule(_localctx, 4, RULE_factor);
 		try {
-			State = 32;
+			State = 27;
 			_errHandler.Sync(this);
 			switch (_input.La(1)) {
-			case INT:
+			case NUMBER:
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 27; Match(INT);
+				State = 22; Match(NUMBER);
 				}
 				break;
 			case T__4:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 28; Match(T__4);
-				State = 29; expr();
-				State = 30; Match(T__5);
+				State = 23; Match(T__4);
+				State = 24; expression();
+				State = 25; Match(T__5);
 				}
 				break;
 			default:
@@ -352,20 +305,19 @@ public partial class MathParser : Parser {
 	}
 
 	public static readonly string _serializedATN =
-		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\n%\x4\x2\t\x2\x4"+
-		"\x3\t\x3\x4\x4\t\x4\x4\x5\t\x5\x3\x2\x3\x2\x3\x2\x3\x3\x3\x3\x3\x3\a\x3"+
-		"\x11\n\x3\f\x3\xE\x3\x14\v\x3\x3\x4\x3\x4\x3\x4\a\x4\x19\n\x4\f\x4\xE"+
-		"\x4\x1C\v\x4\x3\x5\x3\x5\x3\x5\x3\x5\x3\x5\x5\x5#\n\x5\x3\x5\x2\x2\x2"+
-		"\x6\x2\x2\x4\x2\x6\x2\b\x2\x2\x4\x3\x2\x3\x4\x3\x2\x5\x6#\x2\n\x3\x2\x2"+
-		"\x2\x4\r\x3\x2\x2\x2\x6\x15\x3\x2\x2\x2\b\"\x3\x2\x2\x2\n\v\x5\x4\x3\x2"+
-		"\v\f\a\x2\x2\x3\f\x3\x3\x2\x2\x2\r\x12\x5\x6\x4\x2\xE\xF\t\x2\x2\x2\xF"+
-		"\x11\x5\x6\x4\x2\x10\xE\x3\x2\x2\x2\x11\x14\x3\x2\x2\x2\x12\x10\x3\x2"+
-		"\x2\x2\x12\x13\x3\x2\x2\x2\x13\x5\x3\x2\x2\x2\x14\x12\x3\x2\x2\x2\x15"+
-		"\x1A\x5\b\x5\x2\x16\x17\t\x3\x2\x2\x17\x19\x5\b\x5\x2\x18\x16\x3\x2\x2"+
-		"\x2\x19\x1C\x3\x2\x2\x2\x1A\x18\x3\x2\x2\x2\x1A\x1B\x3\x2\x2\x2\x1B\a"+
-		"\x3\x2\x2\x2\x1C\x1A\x3\x2\x2\x2\x1D#\a\t\x2\x2\x1E\x1F\a\a\x2\x2\x1F"+
-		" \x5\x4\x3\x2 !\a\b\x2\x2!#\x3\x2\x2\x2\"\x1D\x3\x2\x2\x2\"\x1E\x3\x2"+
-		"\x2\x2#\t\x3\x2\x2\x2\x5\x12\x1A\"";
+		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\n \x4\x2\t\x2\x4"+
+		"\x3\t\x3\x4\x4\t\x4\x3\x2\x3\x2\x3\x2\a\x2\f\n\x2\f\x2\xE\x2\xF\v\x2\x3"+
+		"\x3\x3\x3\x3\x3\a\x3\x14\n\x3\f\x3\xE\x3\x17\v\x3\x3\x4\x3\x4\x3\x4\x3"+
+		"\x4\x3\x4\x5\x4\x1E\n\x4\x3\x4\x2\x2\x2\x5\x2\x2\x4\x2\x6\x2\x2\x4\x3"+
+		"\x2\x3\x4\x3\x2\x5\x6\x1F\x2\b\x3\x2\x2\x2\x4\x10\x3\x2\x2\x2\x6\x1D\x3"+
+		"\x2\x2\x2\b\r\x5\x4\x3\x2\t\n\t\x2\x2\x2\n\f\x5\x4\x3\x2\v\t\x3\x2\x2"+
+		"\x2\f\xF\x3\x2\x2\x2\r\v\x3\x2\x2\x2\r\xE\x3\x2\x2\x2\xE\x3\x3\x2\x2\x2"+
+		"\xF\r\x3\x2\x2\x2\x10\x15\x5\x6\x4\x2\x11\x12\t\x3\x2\x2\x12\x14\x5\x6"+
+		"\x4\x2\x13\x11\x3\x2\x2\x2\x14\x17\x3\x2\x2\x2\x15\x13\x3\x2\x2\x2\x15"+
+		"\x16\x3\x2\x2\x2\x16\x5\x3\x2\x2\x2\x17\x15\x3\x2\x2\x2\x18\x1E\a\t\x2"+
+		"\x2\x19\x1A\a\a\x2\x2\x1A\x1B\x5\x2\x2\x2\x1B\x1C\a\b\x2\x2\x1C\x1E\x3"+
+		"\x2\x2\x2\x1D\x18\x3\x2\x2\x2\x1D\x19\x3\x2\x2\x2\x1E\a\x3\x2\x2\x2\x5"+
+		"\r\x15\x1D";
 	public static readonly ATN _ATN =
 		new ATNDeserializer().Deserialize(_serializedATN.ToCharArray());
 }

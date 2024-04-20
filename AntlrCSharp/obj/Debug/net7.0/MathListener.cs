@@ -32,26 +32,15 @@ using IToken = Antlr4.Runtime.IToken;
 [System.CLSCompliant(false)]
 public interface IMathListener : IParseTreeListener {
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="MathParser.start"/>.
+	/// Enter a parse tree produced by <see cref="MathParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterStart([NotNull] MathParser.StartContext context);
+	void EnterExpression([NotNull] MathParser.ExpressionContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="MathParser.start"/>.
+	/// Exit a parse tree produced by <see cref="MathParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitStart([NotNull] MathParser.StartContext context);
-
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="MathParser.expr"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterExpr([NotNull] MathParser.ExprContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="MathParser.expr"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitExpr([NotNull] MathParser.ExprContext context);
+	void ExitExpression([NotNull] MathParser.ExpressionContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="MathParser.term"/>.

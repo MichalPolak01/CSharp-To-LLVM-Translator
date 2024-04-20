@@ -1,0 +1,6 @@
+C:\Users\dwini\Desktop\Test2\AntlrCSharp\obj\Debug\net7.0\MathLexer.cs
+C:\Users\dwini\Desktop\Test2\AntlrCSharp\obj\Debug\net7.0\MathParser.cs
+C:\Users\dwini\Desktop\Test2\AntlrCSharp\obj\Debug\net7.0\MathListener.cs
+C:\Users\dwini\Desktop\Test2\AntlrCSharp\obj\Debug\net7.0\MathBaseListener.cs
+C:\Users\dwini\Desktop\Test2\AntlrCSharp\obj\Debug\net7.0\MathVisitor.cs
+C:\Users\dwini\Desktop\Test2\AntlrCSharp\obj\Debug\net7.0\MathBaseVisitor.cs

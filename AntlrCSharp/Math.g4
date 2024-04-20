@@ -1,9 +1,14 @@
 grammar Math;
 
-// Definiujemy reguÅ‚y gramatyczne dla prostego kalkulatora
-start: expression EOF;
-expression: term (('+' | '-') term)*;
-term: factor (('*' | '/') factor)*;
-factor: NUMBER | '(' expression ')';
-NUMBER: ('0' ..'9')+ ('.' ('0' ..'9')*)?;
-WS: [ \t\r\n]+ -> skip; // Pomijamy bi=
+// Regu³y leksykalne
+INT: [0-9]+;
+WS: [ \t\r\n]+ -> skip;
+
+// Regu³y gramatyczne
+start: expr EOF;
+
+expr: term (('+'|'-') term)*;
+
+term: factor (('*'|'/') factor)*;
+
+factor: INT | '(' expr ')';

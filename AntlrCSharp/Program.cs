@@ -1,6 +1,4 @@
-﻿using Antlr4.Runtime.Tree;
-using Antlr4.Runtime;
-using AntlrCSharp;
+﻿using AntlrCSharp;
 
 Console.WriteLine("Podaj wyrażenie matematyczne:");
 string input = Console.ReadLine();
@@ -13,7 +11,7 @@ var parser = new MathParser(tokens);
 // Pobieramy korzeń drzewa składniowego
 var expressionContext = parser.expression();
 
-// Wyświetlamy drzewo parsowania
+// Wyświetlamy drzewo parsowaniaAC
 Console.WriteLine(expressionContext.ToStringTree(parser));
 
 // Tworzymy obiekt wizytora i odwiedzamy korzeń drzewa składniowego

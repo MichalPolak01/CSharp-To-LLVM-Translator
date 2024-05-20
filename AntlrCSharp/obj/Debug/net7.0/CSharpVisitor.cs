@@ -159,6 +159,13 @@ public interface ICSharpVisitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitMethodDeclaration([NotNull] CSharpParser.MethodDeclarationContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.modifiers"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitModifiers([NotNull] CSharpParser.ModifiersContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="CSharpParser.fieldDeclaration"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

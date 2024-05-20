@@ -3,7 +3,7 @@ grammar CSharp;
 // Parser Rules
 compilationUnit : (usingDirective | globalAttribute | namespaceDeclaration | typeDeclaration)* EOF ;
 
-usingDirective : 'using' (IDENTIFIER ('.' IDENTIFIER)* ';' | 'static' IDENTIFIER ('.' IDENTIFIER)* ';') ;
+usingDirective : 'using' (IDENTIFIER ('.' IDENTIFIER)* ';' | 'static' 'void' IDENTIFIER '(' parameterList? ')' block) ;
 
 globalAttribute : '[' 'assembly' ':' attributeList ']' ;
 
@@ -56,7 +56,8 @@ typeParameterList : IDENTIFIER (',' IDENTIFIER)* ;
 
 parameterList : parameter (',' parameter)* ;
 
-parameter : type IDENTIFIER ;
+parameter : type IDENTIFIER
+          | type '[' ']' IDENTIFIER; // Poprawna obsługa typu tablicowego
 
 block : '{' statement* '}' ;
 
@@ -70,7 +71,9 @@ expressionStatement : expression ';' ;
 
 returnStatement : 'return' expression? ';' ;
 
-expression : assignmentExpression ;
+expression : assignmentExpression 
+           | methodCall // Dodana reguła dla wywołań metod
+           ;
 
 assignmentExpression : IDENTIFIER '=' expression
                      | additiveExpression ;
@@ -81,11 +84,17 @@ multiplicativeExpression : primaryExpression (('*'|'/') primaryExpression)* ;
 
 primaryExpression : IDENTIFIER
                   | LITERAL
-                  | '(' expression ')' ;
+                  | '[' .*? ']' // '[' and ']' treated as part of literal
+                  | '(' expression ')'
+                  ;
 
-attributeList : attribute (',' attribute)* ;
+methodCall : memberAccess '(' (expression (',' expression)*)? ')' ; // Reguła dla wywołań metod
 
-attribute : '[' (IDENTIFIER | qualifiedIdentifier) (':' attributeArgumentList)? ']' ;
+memberAccess : IDENTIFIER ('.' IDENTIFIER)* ; // Dodana reguła dla dostępu do członków
+
+attributeList : '[' (attribute (',' attribute)*)? ']' ;
+
+attribute : IDENTIFIER ('.' IDENTIFIER)* ('(' attributeArgumentList? ')')? ;
 
 attributeArgumentList : attributeArgument (',' attributeArgument)* ;
 
@@ -93,5 +102,4 @@ attributeArgument : IDENTIFIER '=' (IDENTIFIER | LITERAL) ;
 
 IDENTIFIER : [a-zA-Z_][a-zA-Z_0-9]* ;
 LITERAL : [0-9]+ | '"' .*? '"' | '\'' . '\'' ;
-
 WS : [ \t\r\n]+ -> skip ;

@@ -230,6 +230,17 @@ public interface ICSharpListener : IParseTreeListener {
 	void ExitMethodDeclaration([NotNull] CSharpParser.MethodDeclarationContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.modifiers"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterModifiers([NotNull] CSharpParser.ModifiersContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.modifiers"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitModifiers([NotNull] CSharpParser.ModifiersContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="CSharpParser.fieldDeclaration"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

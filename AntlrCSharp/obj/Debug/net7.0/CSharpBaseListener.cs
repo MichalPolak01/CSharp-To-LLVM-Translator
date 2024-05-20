@@ -270,6 +270,19 @@ public partial class CSharpBaseListener : ICSharpListener {
 	public virtual void ExitMethodDeclaration([NotNull] CSharpParser.MethodDeclarationContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.modifiers"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterModifiers([NotNull] CSharpParser.ModifiersContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.modifiers"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitModifiers([NotNull] CSharpParser.ModifiersContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="CSharpParser.fieldDeclaration"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>

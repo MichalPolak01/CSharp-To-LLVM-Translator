@@ -1,4 +1,4 @@
-partial class Program
+partial class HelloWorld
 {
     static void Main(string[] args)
     {

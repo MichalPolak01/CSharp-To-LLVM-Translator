@@ -384,6 +384,39 @@ public interface ICSharpListener : IParseTreeListener {
 	void ExitReturnStatement([NotNull] CSharpParser.ReturnStatementContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.ifStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterIfStatement([NotNull] CSharpParser.IfStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.ifStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitIfStatement([NotNull] CSharpParser.IfStatementContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.whileStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterWhileStatement([NotNull] CSharpParser.WhileStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.whileStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitWhileStatement([NotNull] CSharpParser.WhileStatementContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.forStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterForStatement([NotNull] CSharpParser.ForStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.forStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitForStatement([NotNull] CSharpParser.ForStatementContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="CSharpParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -404,6 +437,61 @@ public interface ICSharpListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitAssignmentExpression([NotNull] CSharpParser.AssignmentExpressionContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.conditionalExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterConditionalExpression([NotNull] CSharpParser.ConditionalExpressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.conditionalExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitConditionalExpression([NotNull] CSharpParser.ConditionalExpressionContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.logicalOrExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterLogicalOrExpression([NotNull] CSharpParser.LogicalOrExpressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.logicalOrExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitLogicalOrExpression([NotNull] CSharpParser.LogicalOrExpressionContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.logicalAndExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterLogicalAndExpression([NotNull] CSharpParser.LogicalAndExpressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.logicalAndExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitLogicalAndExpression([NotNull] CSharpParser.LogicalAndExpressionContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.equalityExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterEqualityExpression([NotNull] CSharpParser.EqualityExpressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.equalityExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitEqualityExpression([NotNull] CSharpParser.EqualityExpressionContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.relationalExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterRelationalExpression([NotNull] CSharpParser.RelationalExpressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.relationalExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitRelationalExpression([NotNull] CSharpParser.RelationalExpressionContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CSharpParser.additiveExpression"/>.
@@ -428,6 +516,28 @@ public interface ICSharpListener : IParseTreeListener {
 	void ExitMultiplicativeExpression([NotNull] CSharpParser.MultiplicativeExpressionContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.unaryExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterUnaryExpression([NotNull] CSharpParser.UnaryExpressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.unaryExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitUnaryExpression([NotNull] CSharpParser.UnaryExpressionContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.postfixExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterPostfixExpression([NotNull] CSharpParser.PostfixExpressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.postfixExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitPostfixExpression([NotNull] CSharpParser.PostfixExpressionContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="CSharpParser.primaryExpression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -437,6 +547,39 @@ public interface ICSharpListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitPrimaryExpression([NotNull] CSharpParser.PrimaryExpressionContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.methodCall"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterMethodCall([NotNull] CSharpParser.MethodCallContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.methodCall"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitMethodCall([NotNull] CSharpParser.MethodCallContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.memberAccess"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterMemberAccess([NotNull] CSharpParser.MemberAccessContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.memberAccess"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitMemberAccess([NotNull] CSharpParser.MemberAccessContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.functionCallStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterFunctionCallStatement([NotNull] CSharpParser.FunctionCallStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.functionCallStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitFunctionCallStatement([NotNull] CSharpParser.FunctionCallStatementContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CSharpParser.attributeList"/>.
@@ -481,5 +624,16 @@ public interface ICSharpListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitAttributeArgument([NotNull] CSharpParser.AttributeArgumentContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.comparisonOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterComparisonOperator([NotNull] CSharpParser.ComparisonOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.comparisonOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitComparisonOperator([NotNull] CSharpParser.ComparisonOperatorContext context);
 }
 } // namespace AntlrCSharp

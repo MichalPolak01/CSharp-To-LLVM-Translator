@@ -1,6 +1,5 @@
 grammar CSharp;
 
-// Parser Rules
 compilationUnit : (usingDirective | globalAttribute | namespaceDeclaration | typeDeclaration)* EOF ;
 
 usingDirective : 'using' (IDENTIFIER ('.' IDENTIFIER)* ';' | 'static' 'void' IDENTIFIER '(' parameterList? ')' block) ;
@@ -40,7 +39,7 @@ structMemberDeclaration : methodDeclaration | fieldDeclaration ;
 
 methodDeclaration : modifiers? returnType IDENTIFIER '(' parameterList? ')' block ;
 
-modifiers : 'static' ;
+modifiers : 'public' | 'private' | 'protected' | 'internal' | 'static' ;
 
 fieldDeclaration : type IDENTIFIER ('=' expression)? ';' ;
 
@@ -57,13 +56,17 @@ typeParameterList : IDENTIFIER (',' IDENTIFIER)* ;
 parameterList : parameter (',' parameter)* ;
 
 parameter : type IDENTIFIER
-          | type '[' ']' IDENTIFIER; // Poprawna obsługa typu tablicowego
+          | type '[' ']' IDENTIFIER ;
 
 block : '{' statement* '}' ;
 
 statement : localVariableDeclaration
           | expressionStatement
-          | returnStatement ;
+          | returnStatement
+          | ifStatement
+          | whileStatement
+          | forStatement
+          | functionCallStatement ;
 
 localVariableDeclaration : type IDENTIFIER ('=' expression)? ';' ;
 
@@ -71,26 +74,49 @@ expressionStatement : expression ';' ;
 
 returnStatement : 'return' expression? ';' ;
 
+ifStatement : 'if' '(' expression ')' block ('else' block)? ;
+
+whileStatement : 'while' '(' expression ')' block ;
+
+forStatement : 'for' '(' (localVariableDeclaration | expressionStatement)? expression? ';' expression? ')' block ;
+
 expression : assignmentExpression 
-           | methodCall // Dodana reguła dla wywołań metod
+           | methodCall
            ;
 
 assignmentExpression : IDENTIFIER '=' expression
-                     | additiveExpression ;
+                     | conditionalExpression ;
+
+conditionalExpression : logicalOrExpression ;
+
+logicalOrExpression : logicalAndExpression ( '||' logicalAndExpression )* ;
+
+logicalAndExpression : equalityExpression ( '&&' equalityExpression )* ;
+
+equalityExpression : relationalExpression (('==' | '!=') relationalExpression)* ;
+
+relationalExpression : additiveExpression (('>' | '<' | '>=' | '<=') additiveExpression)* ;
 
 additiveExpression : multiplicativeExpression (('+'|'-') multiplicativeExpression)* ;
 
-multiplicativeExpression : primaryExpression (('*'|'/') primaryExpression)* ;
+multiplicativeExpression : unaryExpression (('*'|'/') unaryExpression)* ;
+
+unaryExpression : postfixExpression
+                | ('+'|'-'|'++'|'--') unaryExpression ;
+
+postfixExpression : primaryExpression ('++' | '--')* ;
 
 primaryExpression : IDENTIFIER
                   | LITERAL
-                  | '[' .*? ']' // '[' and ']' treated as part of literal
+                  | '[' .*? ']'
                   | '(' expression ')'
                   ;
 
-methodCall : memberAccess '(' (expression (',' expression)*)? ')' ; // Reguła dla wywołań metod
+methodCall : memberAccess '(' (expression (',' expression)*)? ')' ;
 
-memberAccess : IDENTIFIER ('.' IDENTIFIER)* ; // Dodana reguła dla dostępu do członków
+memberAccess : IDENTIFIER ('.' IDENTIFIER)* ;
+
+functionCallStatement : memberAccess '(' (expression (',' expression)*)? ')' ';' ;
 
 attributeList : '[' (attribute (',' attribute)*)? ']' ;
 
@@ -99,6 +125,8 @@ attribute : IDENTIFIER ('.' IDENTIFIER)* ('(' attributeArgumentList? ')')? ;
 attributeArgumentList : attributeArgument (',' attributeArgument)* ;
 
 attributeArgument : IDENTIFIER '=' (IDENTIFIER | LITERAL) ;
+
+comparisonOperator : '>' | '<' | '>=' | '<=' | '==' | '!=' ;
 
 IDENTIFIER : [a-zA-Z_][a-zA-Z_0-9]* ;
 LITERAL : [0-9]+ | '"' .*? '"' | '\'' . '\'' ;

@@ -257,6 +257,27 @@ public interface ICSharpVisitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitReturnStatement([NotNull] CSharpParser.ReturnStatementContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.ifStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitIfStatement([NotNull] CSharpParser.IfStatementContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.whileStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitWhileStatement([NotNull] CSharpParser.WhileStatementContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.forStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitForStatement([NotNull] CSharpParser.ForStatementContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="CSharpParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -269,6 +290,41 @@ public interface ICSharpVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitAssignmentExpression([NotNull] CSharpParser.AssignmentExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.conditionalExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitConditionalExpression([NotNull] CSharpParser.ConditionalExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.logicalOrExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitLogicalOrExpression([NotNull] CSharpParser.LogicalOrExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.logicalAndExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitLogicalAndExpression([NotNull] CSharpParser.LogicalAndExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.equalityExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitEqualityExpression([NotNull] CSharpParser.EqualityExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.relationalExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitRelationalExpression([NotNull] CSharpParser.RelationalExpressionContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CSharpParser.additiveExpression"/>.
@@ -285,11 +341,46 @@ public interface ICSharpVisitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitMultiplicativeExpression([NotNull] CSharpParser.MultiplicativeExpressionContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.unaryExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitUnaryExpression([NotNull] CSharpParser.UnaryExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.postfixExpression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPostfixExpression([NotNull] CSharpParser.PostfixExpressionContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="CSharpParser.primaryExpression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitPrimaryExpression([NotNull] CSharpParser.PrimaryExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.methodCall"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitMethodCall([NotNull] CSharpParser.MethodCallContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.memberAccess"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitMemberAccess([NotNull] CSharpParser.MemberAccessContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.functionCallStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitFunctionCallStatement([NotNull] CSharpParser.FunctionCallStatementContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CSharpParser.attributeList"/>.
@@ -318,5 +409,12 @@ public interface ICSharpVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitAttributeArgument([NotNull] CSharpParser.AttributeArgumentContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.comparisonOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitComparisonOperator([NotNull] CSharpParser.ComparisonOperatorContext context);
 }
 } // namespace AntlrCSharp

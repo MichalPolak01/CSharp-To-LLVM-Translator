@@ -2,7 +2,7 @@ grammar CSharp;
 
 compilationUnit : (usingDirective | globalAttribute | namespaceDeclaration | typeDeclaration)* EOF ;
 
-usingDirective : 'using' (IDENTIFIER ('.' IDENTIFIER)* ';' | 'static' 'void' IDENTIFIER '(' parameterList? ')' block) ;
+usingDirective : 'using' ('static' qualifiedIdentifier | qualifiedIdentifier) ';' ;
 
 globalAttribute : '[' 'assembly' ':' attributeList ']' ;
 
@@ -37,9 +37,11 @@ interfaceMemberDeclaration : methodDeclaration ;
 
 structMemberDeclaration : methodDeclaration | fieldDeclaration ;
 
-methodDeclaration : modifiers? returnType IDENTIFIER '(' parameterList? ')' block ;
+methodDeclaration : methodModifiers? returnType IDENTIFIER '(' parameterList? ')' block ;
 
-modifiers : 'public' | 'private' | 'protected' | 'internal' | 'static' ;
+methodModifiers : (accessModifier | 'static' | otherModifier)+ ;
+accessModifier : 'public' | 'private' | 'protected' | 'internal' ;
+otherModifier : 'abstract' | 'sealed' | 'override' ;
 
 fieldDeclaration : type IDENTIFIER ('=' expression)? ';' ;
 
@@ -93,18 +95,18 @@ logicalOrExpression : logicalAndExpression ( '||' logicalAndExpression )* ;
 
 logicalAndExpression : equalityExpression ( '&&' equalityExpression )* ;
 
-equalityExpression : relationalExpression (('==' | '!=') relationalExpression)* ;
+equalityExpression : relationalExpression ( ('==' | '!=') relationalExpression )* ;
 
-relationalExpression : additiveExpression (('>' | '<' | '>=' | '<=') additiveExpression)* ;
+relationalExpression : additiveExpression ( ('>' | '<' | '>=' | '<=') additiveExpression )* ;
 
-additiveExpression : multiplicativeExpression (('+'|'-') multiplicativeExpression)* ;
+additiveExpression : multiplicativeExpression ( ('+' | '-') multiplicativeExpression )* ;
 
-multiplicativeExpression : unaryExpression (('*'|'/') unaryExpression)* ;
+multiplicativeExpression : unaryExpression ( ('*' | '/') unaryExpression )* ;
 
 unaryExpression : postfixExpression
-                | ('+'|'-'|'++'|'--') unaryExpression ;
+                | ('+' | '-' | '++' | '--') unaryExpression ;
 
-postfixExpression : primaryExpression ('++' | '--')* ;
+postfixExpression : primaryExpression ( '++' | '--' )* ;
 
 primaryExpression : IDENTIFIER
                   | LITERAL

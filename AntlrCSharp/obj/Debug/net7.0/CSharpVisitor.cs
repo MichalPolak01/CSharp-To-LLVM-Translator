@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:\Users\dwini\Desktop\Test2\AntlrCSharp\CSharp.g4 by ANTLR 4.6.6
+// Generated from C:\Users\dwini\Desktop\CSharpToLLVM\AntlrCSharp\CSharp.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -159,11 +159,25 @@ public interface ICSharpVisitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitMethodDeclaration([NotNull] CSharpParser.MethodDeclarationContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="CSharpParser.modifiers"/>.
+	/// Visit a parse tree produced by <see cref="CSharpParser.methodModifiers"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitModifiers([NotNull] CSharpParser.ModifiersContext context);
+	Result VisitMethodModifiers([NotNull] CSharpParser.MethodModifiersContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.accessModifier"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAccessModifier([NotNull] CSharpParser.AccessModifierContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.otherModifier"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitOtherModifier([NotNull] CSharpParser.OtherModifierContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CSharpParser.fieldDeclaration"/>.

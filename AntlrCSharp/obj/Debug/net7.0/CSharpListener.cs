@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:\Users\dwini\Desktop\Test2\AntlrCSharp\CSharp.g4 by ANTLR 4.6.6
+// Generated from C:\Users\dwini\Desktop\CSharpToLLVM\AntlrCSharp\CSharp.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -230,15 +230,37 @@ public interface ICSharpListener : IParseTreeListener {
 	void ExitMethodDeclaration([NotNull] CSharpParser.MethodDeclarationContext context);
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="CSharpParser.modifiers"/>.
+	/// Enter a parse tree produced by <see cref="CSharpParser.methodModifiers"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterModifiers([NotNull] CSharpParser.ModifiersContext context);
+	void EnterMethodModifiers([NotNull] CSharpParser.MethodModifiersContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="CSharpParser.modifiers"/>.
+	/// Exit a parse tree produced by <see cref="CSharpParser.methodModifiers"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitModifiers([NotNull] CSharpParser.ModifiersContext context);
+	void ExitMethodModifiers([NotNull] CSharpParser.MethodModifiersContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.accessModifier"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAccessModifier([NotNull] CSharpParser.AccessModifierContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.accessModifier"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAccessModifier([NotNull] CSharpParser.AccessModifierContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.otherModifier"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterOtherModifier([NotNull] CSharpParser.OtherModifierContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.otherModifier"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitOtherModifier([NotNull] CSharpParser.OtherModifierContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CSharpParser.fieldDeclaration"/>.

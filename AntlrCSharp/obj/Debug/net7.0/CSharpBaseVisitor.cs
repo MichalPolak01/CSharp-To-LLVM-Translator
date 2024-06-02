@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:\Users\dwini\Desktop\Test2\AntlrCSharp\CSharp.g4 by ANTLR 4.6.6
+// Generated from C:\Users\dwini\Desktop\CSharpToLLVM\AntlrCSharp\CSharp.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -233,7 +233,7 @@ public partial class CSharpBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	public virtual Result VisitMethodDeclaration([NotNull] CSharpParser.MethodDeclarationContext context) { return VisitChildren(context); }
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="CSharpParser.modifiers"/>.
+	/// Visit a parse tree produced by <see cref="CSharpParser.methodModifiers"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -241,7 +241,29 @@ public partial class CSharpBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitModifiers([NotNull] CSharpParser.ModifiersContext context) { return VisitChildren(context); }
+	public virtual Result VisitMethodModifiers([NotNull] CSharpParser.MethodModifiersContext context) { return VisitChildren(context); }
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.accessModifier"/>.
+	/// <para>
+	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
+	/// on <paramref name="context"/>.
+	/// </para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	public virtual Result VisitAccessModifier([NotNull] CSharpParser.AccessModifierContext context) { return VisitChildren(context); }
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.otherModifier"/>.
+	/// <para>
+	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
+	/// on <paramref name="context"/>.
+	/// </para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	public virtual Result VisitOtherModifier([NotNull] CSharpParser.OtherModifierContext context) { return VisitChildren(context); }
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CSharpParser.fieldDeclaration"/>.

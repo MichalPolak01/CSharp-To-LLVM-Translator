@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dwini\\Desktop\\Test2\\AntlrCSharp\\AntlrCSharp.csproj": {}
+    "C:\\Users\\dwini\\Desktop\\CSharpToLLVM\\AntlrCSharp\\AntlrCSharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dwini\\Desktop\\Test2\\AntlrCSharp\\AntlrCSharp.csproj": {
+    "C:\\Users\\dwini\\Desktop\\CSharpToLLVM\\AntlrCSharp\\AntlrCSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dwini\\Desktop\\Test2\\AntlrCSharp\\AntlrCSharp.csproj",
+        "projectUniqueName": "C:\\Users\\dwini\\Desktop\\CSharpToLLVM\\AntlrCSharp\\AntlrCSharp.csproj",
         "projectName": "AntlrCSharp",
-        "projectPath": "C:\\Users\\dwini\\Desktop\\Test2\\AntlrCSharp\\AntlrCSharp.csproj",
+        "projectPath": "C:\\Users\\dwini\\Desktop\\CSharpToLLVM\\AntlrCSharp\\AntlrCSharp.csproj",
         "packagesPath": "C:\\Users\\dwini\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dwini\\Desktop\\Test2\\AntlrCSharp\\obj\\",
+        "outputPath": "C:\\Users\\dwini\\Desktop\\CSharpToLLVM\\AntlrCSharp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -39,11 +39,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {

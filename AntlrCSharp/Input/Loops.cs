@@ -2,9 +2,15 @@
 {
     static void Main(string[] args)
     {
-        for(int i = 0; i < 2 ; i++)
+        for(var i = 0 ; i < 2 ; i++)
         {
             Console.WriteLine(i);
+        }
+
+        int counter = 5;
+        while (counter > 0)
+        {
+            counter--;
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using Antlr4.Runtime;
 using AntlrCSharp;
 
-string inputDirectory = @"C:\Users\dwini\Desktop\Test2\AntlrCSharp\Input";
-string outputDirectory = @"C:\Users\dwini\Desktop\Test2\AntlrCSharp\Output";
+string inputDirectory = @"C:\Users\dwini\Desktop\CSharpToLLVM\AntlrCSharp\Input";
+string outputDirectory = @"C:\Users\dwini\Desktop\CSharpToLLVM\AntlrCSharp\Output";
 string[] fileNames = { "HelloWorld.cs", "Functions.cs", "Loops.cs" };
 
 Console.WriteLine("Podaj input:");

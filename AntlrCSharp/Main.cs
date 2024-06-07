@@ -6,9 +6,9 @@ string outputDirectory = @"C:\Users\dwini\Desktop\CSharpToLLVM\AntlrCSharp\Outpu
 string[] fileNames = { "HelloWorld.cs", "Functions.cs", "Loops.cs" };
 
 Console.WriteLine("Podaj input:");
-Console.WriteLine("\n1. Hello World");
-Console.WriteLine("\n2. Functions");
-Console.WriteLine("\n3. Loops");
+Console.WriteLine("1. Hello World");
+Console.WriteLine("2. Functions");
+Console.WriteLine("3. Loops");
 string input = Console.ReadLine();
 
 int choice;
@@ -38,11 +38,15 @@ var parser = new CSharpParser(tokens);
 // Pobieramy korzeń drzewa składniowego
 var tree = parser.compilationUnit();
 
-// Wyświetlamy drzewo parsowania
-Console.WriteLine(tree.ToStringTree(parser));
-
-// Generujemy plik .ir
-string outputFileName = Path.ChangeExtension(selectedFileName, "ir");
+// Generujemy plik .ll
+string outputFileName = Path.ChangeExtension(selectedFileName, "ll");
 string outputFilePath = Path.Combine(outputDirectory, outputFileName);
 File.WriteAllText(outputFilePath, tree.ToStringTree(parser));
 Console.WriteLine($"Wygenerowano plik {outputFileName}");
+
+// Generujemy plik wsadowy .bat
+string batFileName = Path.ChangeExtension(selectedFileName, "bat");
+string batFilePath = Path.Combine(outputDirectory, batFileName);
+string batContent = $"@echo off\nllvm-as {outputFilePath}\npause";
+File.WriteAllText(batFilePath, batContent);
+Console.WriteLine($"Wygenerowano plik wsadowy {batFileName}");

@@ -8,8 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71a3c780-d567-4fab-ae30-3791d9bb20eb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/CSharp.g4" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/CSharp.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/Input/Loops.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/Input/Loops.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CSharpToLLVM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CSharpToLLVM/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntlrCSharp/Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/Main.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntlrCSharp/Output/Functions.ir" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/AntlrCSharp/Output/HelloWorld.ir" beforeDir="false" />
@@ -17,35 +16,16 @@
       <change beforePath="$PROJECT_DIR$/AntlrCSharp/bin/Debug/net7.0/AntlrCSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/bin/Debug/net7.0/AntlrCSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntlrCSharp/bin/Debug/net7.0/AntlrCSharp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/bin/Debug/net7.0/AntlrCSharp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntlrCSharp/bin/Debug/net7.0/AntlrCSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/bin/Debug/net7.0/AntlrCSharp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/AntlrCSharp.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/AntlrCSharp.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/AntlrCSharp.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/AntlrCSharp.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.csproj.Antlr4GeneratedCodeFileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.csproj.Antlr4GeneratedCodeFileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/AntlrCSharp.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/CSharp.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/CSharp.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/CSharpBaseListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/CSharpBaseListener.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/CSharpBaseVisitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/CSharpBaseVisitor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/CSharpLexer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/CSharpLexer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/CSharpLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/CSharpLexer.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/CSharpListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/CSharpListener.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/CSharpParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/CSharpParser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/CSharpVisitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/CSharpVisitor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/ref/AntlrCSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/ref/AntlrCSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/refint/AntlrCSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/Debug/net7.0/refint/AntlrCSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntlrCSharp/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/AntlrCSharp/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,27 +43,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.AntlrCSharp.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature-3-other-tests",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.AntlrCSharp.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature-3-other-tests&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\dwini\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\dwini\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\dwini\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\dwini\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\dwini\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\dwini\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="AntlrCSharp" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -114,6 +94,11 @@
       <updated>1717324458121</updated>
       <workItem from="1717324459246" duration="39000" />
       <workItem from="1717324526077" duration="3465000" />
+      <workItem from="1717328207994" duration="1402000" />
+      <workItem from="1717480862463" duration="1790000" />
+      <workItem from="1717614029320" duration="310000" />
+      <workItem from="1717748623165" duration="1540000" />
+      <workItem from="1717765503944" duration="48000" />
     </task>
     <servers />
   </component>

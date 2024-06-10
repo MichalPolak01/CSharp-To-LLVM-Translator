@@ -59,3 +59,6 @@ pause
 File.WriteAllText(batFilePath, batFileContent);
 Console.WriteLine($"Plik .bat zapisano do: {batFilePath}");
 
+// Wyświetlenie drzewa
+Console.WriteLine("\nDrzewo Parsowania:");
+Console.WriteLine(tree.ToStringTree(parser));

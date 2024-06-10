@@ -76,7 +76,9 @@ expressionStatement : expression ';' ;
 
 returnStatement : 'return' expression? ';' ;
 
-ifStatement : 'if' '(' expression ')' block ('else' block)? ;
+ifStatement : 'if' '(' expression ')' block elseClause? ;
+
+elseClause : 'else' block ;
 
 whileStatement : 'while' '(' expression ')' block ;
 

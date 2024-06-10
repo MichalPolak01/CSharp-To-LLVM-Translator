@@ -278,6 +278,13 @@ public interface ICSharpVisitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitIfStatement([NotNull] CSharpParser.IfStatementContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="CSharpParser.elseClause"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitElseClause([NotNull] CSharpParser.ElseClauseContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="CSharpParser.whileStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

@@ -417,6 +417,17 @@ public interface ICSharpListener : IParseTreeListener {
 	void ExitIfStatement([NotNull] CSharpParser.IfStatementContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.elseClause"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterElseClause([NotNull] CSharpParser.ElseClauseContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.elseClause"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitElseClause([NotNull] CSharpParser.ElseClauseContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="CSharpParser.whileStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

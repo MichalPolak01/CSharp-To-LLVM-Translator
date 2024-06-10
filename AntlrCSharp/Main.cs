@@ -1,5 +1,7 @@
 ﻿using Antlr4.Runtime;
 using AntlrCSharp;
+using System.IO;
+using System.Text;
 
 string inputDirectory = @"C:\Users\dwini\Desktop\CSharpToLLVM\AntlrCSharp\Input";
 string outputDirectory = @"C:\Users\dwini\Desktop\CSharpToLLVM\AntlrCSharp\Output";
@@ -38,15 +40,21 @@ var parser = new CSharpParser(tokens);
 // Pobieramy korzeń drzewa składniowego
 var tree = parser.compilationUnit();
 
-// Generujemy plik .ll
-string outputFileName = Path.ChangeExtension(selectedFileName, "ll");
-string outputFilePath = Path.Combine(outputDirectory, outputFileName);
-File.WriteAllText(outputFilePath, tree.ToStringTree(parser));
-Console.WriteLine($"Wygenerowano plik {outputFileName}");
+// Przetwarzanie drzewa składniowego w celu wygenerowania kodu LLVM IR
+var llvmGenerator = new LLVMGenerator();
+string llvmIRCode = llvmGenerator.Generate(tree);
 
-// Generujemy plik wsadowy .bat
-string batFileName = Path.ChangeExtension(selectedFileName, "bat");
-string batFilePath = Path.Combine(outputDirectory, batFileName);
-string batContent = $"@echo off\nllvm-as {outputFilePath}\npause";
-File.WriteAllText(batFilePath, batContent);
-Console.WriteLine($"Wygenerowano plik wsadowy {batFileName}");
+// Zapisz kod LLVM IR do pliku .ll
+string outputFilePath = Path.Combine(outputDirectory, Path.GetFileNameWithoutExtension(selectedFileName) + ".ll");
+File.WriteAllText(outputFilePath, llvmIRCode);
+Console.WriteLine($"Kod LLVM IR zapisano do: {outputFilePath}");
+
+// Tworzenie pliku .bat do kompilacji kodu LLVM IR
+string batFilePath = Path.Combine(outputDirectory, "compile.bat");
+string batFileContent = $@"
+@echo off
+clang {Path.GetFileName(outputFilePath)} -o {Path.GetFileNameWithoutExtension(selectedFileName)}.exe
+pause
+";
+File.WriteAllText(batFilePath, batFileContent);
+Console.WriteLine($"Plik .bat zapisano do: {batFilePath}");

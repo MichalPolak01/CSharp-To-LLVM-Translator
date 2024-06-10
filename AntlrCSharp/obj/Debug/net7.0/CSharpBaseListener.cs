@@ -491,6 +491,19 @@ public partial class CSharpBaseListener : ICSharpListener {
 	public virtual void ExitIfStatement([NotNull] CSharpParser.IfStatementContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="CSharpParser.elseClause"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterElseClause([NotNull] CSharpParser.ElseClauseContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CSharpParser.elseClause"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitElseClause([NotNull] CSharpParser.ElseClauseContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="CSharpParser.whileStatement"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>

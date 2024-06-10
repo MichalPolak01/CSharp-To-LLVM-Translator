@@ -53,8 +53,9 @@ Console.WriteLine($"Kod LLVM IR zapisano do: {outputFilePath}");
 string batFilePath = Path.Combine(outputDirectory, "compile.bat");
 string batFileContent = $@"
 @echo off
-clang {Path.GetFileName(outputFilePath)} -o {Path.GetFileNameWithoutExtension(selectedFileName)}.exe
+clang {Path.GetFileName(outputFilePath)} -o {Path.GetFileNameWithoutExtension(selectedFileName)}.exe -Wl,-e,main
 pause
 ";
 File.WriteAllText(batFilePath, batFileContent);
 Console.WriteLine($"Plik .bat zapisano do: {batFilePath}");
+

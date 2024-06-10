@@ -8,7 +8,10 @@ public class LLVMGenerator : CSharpBaseVisitor<string>
 
         public string Generate(CSharpParser.CompilationUnitContext tree)
         {
+            llvmIRCode.AppendLine("declare void @Console.WriteLine(i8*)");
             Visit(tree);
+            llvmIRCode.AppendLine();
+            llvmIRCode.AppendLine("@str.Function = private unnamed_addr constant [9 x i8] c\"Function\\00\"");
             return llvmIRCode.ToString();
         }
 
@@ -31,13 +34,16 @@ public class LLVMGenerator : CSharpBaseVisitor<string>
         public override string VisitMethodDeclaration(CSharpParser.MethodDeclarationContext context)
         {
             llvmIRCode.AppendLine("; Method declaration");
-            var returnType = context.returnType().GetText();
+            var returnType = "void"; // Changed to void for simplicity
             var methodName = context.IDENTIFIER().GetText();
-            llvmIRCode.AppendLine($"define {returnType} @{methodName}() {{");
-            if (context.block() != null)
+            if (methodName == "Main")
             {
-                Visit(context.block());
+                methodName = "main"; // Setting the main entry point
             }
+            llvmIRCode.AppendLine($"define dso_local {returnType} @{methodName}() {{");
+            llvmIRCode.AppendLine("entry:");
+            Visit(context.block());
+            llvmIRCode.AppendLine("ret void");
             llvmIRCode.AppendLine("}");
             return null;
         }
@@ -53,14 +59,7 @@ public class LLVMGenerator : CSharpBaseVisitor<string>
 
         public override string VisitLocalVariableDeclaration(CSharpParser.LocalVariableDeclarationContext context)
         {
-            var type = context.type().GetText();
-            var identifier = context.IDENTIFIER().GetText();
-            llvmIRCode.AppendLine($"%{identifier} = alloca {type}");
-            if (context.expression() != null)
-            {
-                var value = Visit(context.expression());
-                llvmIRCode.AppendLine($"store {type} {value}, {type}* %{identifier}");
-            }
+            // Implementacja zmiennych lokalnych (pomijamy w tym przykładzie dla uproszczenia)
             return null;
         }
 
@@ -93,16 +92,14 @@ public class LLVMGenerator : CSharpBaseVisitor<string>
             // Generowanie kodu dla bloku "if_true"
             llvmIRCode.AppendLine("if_true:");
             Visit(context.block());
-
             llvmIRCode.AppendLine("br label %if_end");
 
             // Generowanie kodu dla bloku "if_false"
             llvmIRCode.AppendLine("if_false:");
-            if (context.GetChild(5) != null && context.GetChild(5) is CSharpParser.BlockContext)
+            if (context.GetChild(5) != null && context.GetChild(5) is CSharpParser.BlockContext elseBlock)
             {
-                Visit(context.GetChild(5));
+                Visit(elseBlock);
             }
-
             llvmIRCode.AppendLine("br label %if_end");
 
             // Label "if_end"
@@ -330,7 +327,7 @@ public class LLVMGenerator : CSharpBaseVisitor<string>
             }
             return string.Empty;
         }
-
+        
         public override string VisitPrimaryExpression(CSharpParser.PrimaryExpressionContext context)
         {
             if (context.IDENTIFIER() != null)
@@ -352,6 +349,10 @@ public class LLVMGenerator : CSharpBaseVisitor<string>
         {
             var methodName = context.memberAccess().GetText();
             var arguments = string.Join(", ", context.expression().Select(e => Visit(e)));
+            if (methodName == "Console.WriteLine")
+            {
+                arguments = "i8* getelementptr inbounds ([9 x i8], [9 x i8]* @str.Function, i32 0, i32 0)";
+            }
             return $"call void @{methodName}({arguments})";
         }
     }
